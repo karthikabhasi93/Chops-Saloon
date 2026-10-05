@@ -1,0 +1,750 @@
+/* =========================================================
+   SERVICE BROWSER
+========================================================= */
+
+.service-browser-section {
+    position: relative;
+
+    background: var(--white);
+
+    padding: 0 0 120px;
+}
+
+
+/* =========================================================
+   SERVICE CATEGORY TABS
+========================================================= */
+
+.service-category-tabs-wrapper {
+    position: sticky;
+    top: 108px;
+
+    width: 100%;
+
+    background: var(--chops-green);
+
+    z-index: 900;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.service-category-tabs-inner {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 40px;
+}
+
+
+/* =========================================================
+   TABS TITLE
+========================================================= */
+
+.service-category-tabs-title {
+    margin: 0;
+
+    padding: 14px 0 10px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CATEGORY LIST
+========================================================= */
+
+.service-category-list {
+    display: grid;
+
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+
+    grid-auto-rows: minmax(48px, auto);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   CATEGORY BUTTON
+========================================================= */
+
+.service-category-button {
+    position: relative;
+
+    min-width: 0;
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 13px 10px;
+
+    border: 0;
+    /* border-right: 1px solid rgba(255, 255, 255, 0.10); */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   CATEGORY NUMBER
+========================================================= */
+
+.service-category-button b {
+    flex-shrink: 0;
+
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 8px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.service-category-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   ACTIVE CATEGORY
+========================================================= */
+
+.service-category-button.active {
+    background: var(--chops-gold);
+
+    color: var(--chops-green-dark);
+}
+
+
+.service-category-button.active b {
+    color: var(--chops-green-dark);
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+========================================================= */
+
+.service-content-panel {
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 70px 5vw 0;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CATEGORY CONTENT
+========================================================= */
+
+.service-category-content {
+    display: none;
+}
+
+
+.service-category-content.active {
+    display: block;
+}
+
+
+/* =========================================================
+   EMPTY CATEGORY STATE
+========================================================= */
+
+.service-category-empty {
+    padding: 55px 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.service-category-empty[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   CATEGORY HEADER
+========================================================= */
+
+.service-category-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    /*
+       No border / hr here.
+       This removes the unwanted line below
+       the category description.
+    */
+    padding-bottom: 25px;
+}
+
+
+.service-category-header > div {
+    max-width: 720px;
+}
+
+
+.service-category-eyebrow {
+    margin: 0 0 12px;
+
+    color: var(--chops-gold);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.service-category-header h2 {
+    margin: 0 0 12px;
+
+    color: var(--chops-green);
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+
+.service-category-header > div > p:last-child {
+    margin: 0;
+
+    max-width: 600px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.service-category-count {
+    flex-shrink: 0;
+
+    color: #b5b5b5;
+
+    font-size: 42px;
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ACCORDION
+========================================================= */
+
+.service-accordion {
+    margin-top: 30px;
+
+    border-top: 1px solid #d9dedb;
+}
+
+
+.service-item {
+    border-bottom: 1px solid #d9dedb;
+}
+
+
+/* =========================================================
+   ACCORDION HEADER
+========================================================= */
+
+.service-item-header {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 10px 22px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--chops-green);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        padding-left 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.service-item-name {
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   ACCORDION TOGGLE
+========================================================= */
+
+.service-toggle {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid #cfd5d1;
+
+    color: var(--chops-green);
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   ACCORDION HEADER HOVER
+========================================================= */
+
+.service-item-header:hover {
+    padding-left: 8px;
+
+    color: var(--chops-gold);
+}
+
+
+.service-item-header:hover .service-toggle {
+    border-color: var(--chops-gold);
+}
+
+
+/* =========================================================
+   ACCORDION CONTENT
+========================================================= */
+
+.service-item-content {
+    display: grid;
+
+    grid-template-columns: 230px minmax(0, 1fr);
+
+    gap: 30px;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    padding: 0;
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.35s ease,
+        padding 0.5s ease;
+}
+
+
+/* =========================================================
+   OPEN STATE
+========================================================= */
+
+.service-item.is-open .service-item-content {
+    max-height: 350px;
+
+    opacity: 1;
+
+    padding: 0 0 25px;
+}
+
+
+.service-item.is-open .service-toggle {
+    background: var(--chops-green);
+
+    border-color: var(--chops-green);
+
+    color: var(--white);
+}
+
+
+.service-item.is-open .service-item-header {
+    color: var(--chops-green);
+
+    padding-left: 8px;
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+========================================================= */
+
+.service-item-image {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+
+.service-item-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.service-item.is-open .service-item-image img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   SERVICE DETAILS
+========================================================= */
+
+.service-item-details {
+    padding-top: 5px;
+}
+
+
+.service-item-number {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--chops-gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.service-item-details h3 {
+    margin: 0 0 10px;
+
+    color: var(--chops-green);
+
+    font-size: 23px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+.service-item-details p {
+    max-width: 500px;
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .service-category-tabs-inner {
+        padding: 0 25px;
+    }
+
+
+    .service-category-list {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+
+    .service-category-button {
+        font-size: 9px;
+    }
+
+
+    .service-content-panel {
+        padding: 55px 5vw 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .service-category-tabs-wrapper {
+        top: 108px;
+    }
+
+
+    .service-category-tabs-inner {
+        padding: 0;
+    }
+
+
+    .service-category-tabs-title {
+        padding: 12px 18px 10px;
+    }
+
+
+    /*
+       On mobile the two rows become horizontally
+       scrollable so the category names remain readable.
+    */
+
+    .service-category-list {
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .service-category-list::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .service-category-button {
+        flex: 0 0 auto;
+
+        width: auto;
+
+        min-width: 145px;
+
+        padding: 14px 15px;
+    }
+
+
+    .service-content-panel {
+        padding: 45px 5vw 0;
+    }
+
+
+    .service-category-header {
+        gap: 15px;
+    }
+
+
+    .service-category-header h2 {
+        font-size: 30px;
+    }
+
+
+    .service-category-count {
+        font-size: 30px;
+    }
+
+
+    .service-item-content {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .service-item.is-open .service-item-content {
+        max-height: 600px;
+    }
+
+
+    .service-item-image {
+        max-width: 100%;
+    }
+
+
+    .service-item-details h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .service-category-button {
+        min-width: 135px;
+
+        padding: 13px 12px;
+
+        font-size: 9px;
+    }
+
+
+    .service-item-header {
+        padding: 19px 5px 19px 0;
+    }
+
+
+    .service-item-name {
+        font-size: 14px;
+    }
+
+}
+/* =========================================================
+   SERVICE SUB-CATEGORIES
+========================================================= */
+
+.service-subcategory {
+    margin-top: 28px;
+    padding: 0 0 8px;
+}
+
+.service-subcategory:first-child {
+    margin-top: 0;
+}
+
+.service-subcategory-title {
+    margin: 0;
+    color: var(--chops-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DESKTOP — 16 TABS / EXACTLY 2 ROWS
+========================================================= */
+
+@media (min-width: 1001px) {
+
+    .service-category-list {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-auto-rows: minmax(48px, auto);
+    }
+
+}
+
+
+/* =========================================================
+   SERVICE CONDITIONS
+========================================================= */
+
+.service-conditions {
+    max-width: 1400px;
+    margin: 45px auto 0;
+    padding: 0 5vw;
+}
+
+.service-conditions p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 12px;
+    font-style: italic;
+
+    line-height: 1.6;
+}
