@@ -515,7 +515,7 @@ Thank you.
 
         // CHOPS WhatsApp number
         const chopsWhatsAppNumber =
-            "917907991562";
+            "917907322465";
 
 
         // Encode message for WhatsApp URL
